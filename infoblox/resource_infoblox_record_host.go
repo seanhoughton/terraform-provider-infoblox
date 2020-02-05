@@ -47,10 +47,11 @@ func hostIPv6Schema() map[string]*schema.Schema {
 
 func infobloxRecordHost() *schema.Resource {
 	return &schema.Resource{
-		Create: resourceInfobloxHostRecordCreate,
-		Read:   resourceInfobloxHostRecordRead,
-		Update: resourceInfobloxHostRecordUpdate,
-		Delete: resourceInfobloxHostRecordDelete,
+		Create:   resourceInfobloxHostRecordCreate,
+		Read:     resourceInfobloxHostRecordRead,
+		Update:   resourceInfobloxHostRecordUpdate,
+		Delete:   resourceInfobloxHostRecordDelete,
+		Importer: &schema.ResourceImporter{State: schema.ImportStatePassthrough},
 
 		Schema: map[string]*schema.Schema{
 			"name": &schema.Schema{

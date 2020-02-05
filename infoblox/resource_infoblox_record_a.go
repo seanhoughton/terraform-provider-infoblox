@@ -11,10 +11,11 @@ import (
 
 func infobloxRecordA() *schema.Resource {
 	return &schema.Resource{
-		Create: resourceInfobloxARecordCreate,
-		Read:   resourceInfobloxARecordRead,
-		Update: resourceInfobloxARecordUpdate,
-		Delete: resourceInfobloxARecordDelete,
+		Create:   resourceInfobloxARecordCreate,
+		Read:     resourceInfobloxARecordRead,
+		Update:   resourceInfobloxARecordUpdate,
+		Delete:   resourceInfobloxARecordDelete,
+		Importer: &schema.ResourceImporter{State: schema.ImportStatePassthrough},
 
 		Schema: map[string]*schema.Schema{
 			// TODO: validate that address is in IPv4 format.
